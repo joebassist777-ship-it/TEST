@@ -36,4 +36,103 @@ public class A {
 	Apple(int a){this ("헬로");}
 	Apple(String s){}
 	//생성자 디폴트 시작 다른생성자로 생성.
-	
+
+
+
+
+
+
+
+
+
+
+
+ =======================================
+package coder;
+//정보 데이터
+public class Student {
+
+	private String no;
+	private String major;
+	private String prof;
+	private int grade;
+
+	public Student(String no, String major, String prof, int grade) {
+		this.no = no;
+		this.major = major;
+		this.prof = prof;
+		this.grade = grade;
+	}
+
+	public String getNo() {
+		return no;
+	}
+
+	public void setNo(String no) {
+		this.no = no;
+	}
+
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
+	}
+
+	public String getProf() {
+		return prof;
+	}
+
+	public void setProf(String prof) {
+		this.prof = prof;
+	}
+
+	public int getGrade() {
+		return grade;
+	}
+
+	public void setGrade(int grade) {
+		this.grade = grade;
+	}
+}
+
+
+
+==================================
+
+
+
+package coder;
+
+//3학년만 퇴학
+public class Test {
+	public static void main(String[] args) {
+		Student[] stuArr = new Student[2000];
+		for (int i = 0; i < 2000; i++) {
+			stuArr[i] = new Student("no-" + (i + 1), "Computer", "sasaki", (i % 4) + 1);
+		}
+
+		System.out.println();
+		for (int i = 0; i < stuArr.length; i++) {
+			Student s = stuArr[i];
+			if (s.getGrade() == 3) {
+				stuArr[i] = null;
+			}	
+		}
+		for (int i = 0; i < stuArr.length; i++) {
+			Student s = stuArr[i];
+			if (null != s && s.getGrade() == 1) {
+				s.setMajor("컴퓨터 & Ai");
+			}			
+		}
+		System.out.println();
+
+	}
+}
+//1학년만 전공명칭을 컴퓨터 &AI 로 변경
+
+
+
+
+
