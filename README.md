@@ -134,16 +134,16 @@ public class Test {
 
 
 
++++++++++++++++++++++++++++++
 
+package Kakaotalk1; // 이 파일은 Kakaotalk1이라는 패키지에 속해 있어요
 
-package Kakaotalk1;
-
-public class Team {
-	public static void main(String[] args) {
-		Mesge m = new Mesge("안녕"); // 메시지 생성
-        Me me = new Me();           // 나(Me) 객체 생성
-        Mesge result = me.send(m);  // 메시지 보내기
-        System.out.println("팀에게 보낸 메시지: " + result.text);
+public class Team { // Team 클래스: 전체 프로그램을 실행하는 역할
+    public static void main(String[] args) { // main 메서드: 자바 프로그램의 시작점
+        Mesge m = new Mesge("안녕"); // 메시지 객체 생성, 내용은 "안녕"
+        Me me = new Me();           // Me 객체 생성 (나 자신을 의미)
+        Mesge result = me.send(m);  // Me 객체가 메시지를 보내는 동작 수행
+        System.out.println("팀에게 보낸 메시지: " + result.text); // 결과 메시지 출력
     }
 }
 
@@ -154,24 +154,27 @@ public class Team {
 ==============================
 
 
-package Kakaotalk1;
+package Kakaotalk1; // 같은 패키지에 있어야 Team에서 접근 가능
 
-public class Me {
-    Mesge send(Mesge m) {
-        return m; // 메시지를 그대로 반환
+public class Me { // Me 클래스: 메시지를 보내는 역할
+    Mesge send(Mesge m) { // send 메서드: 메시지를 받아서 그대로 반환
+        return m; // 받은 메시지를 그대로 돌려줌
     }
+}
+
 }
 
 
 ============
-package Kakaotalk1;
+package Kakaotalk1; // 역시 같은 패키지
 
-public class Mesge {
-    String text;
+public class Mesge { // Mesge 클래스: 메시지 내용을 담는 객체
+    String text; // 메시지의 실제 텍스트를 저장하는 변수
 
-    public Mesge(String text) {
-        this.text = text;
+    public Mesge(String text) { // 생성자: 메시지를 만들 때 텍스트를 받아 저장
+        this.text = text; // 전달받은 텍스트를 클래스의 text 변수에 저장
     }
+}
 
 	}
 
