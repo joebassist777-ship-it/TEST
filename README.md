@@ -136,3 +136,45 @@ public class Test {
 
 
 
+package Kakaotalk1;
+
+public class Team {
+	public static void main(String[] args) {
+		Mesge m = new Mesge("안녕"); // 메시지 생성
+        Me me = new Me();           // 나(Me) 객체 생성
+        Mesge result = me.send(m);  // 메시지 보내기
+        System.out.println("팀에게 보낸 메시지: " + result.text);
+    }
+}
+
+
+
+
+
+==============================
+
+
+package Kakaotalk1;
+
+public class Me {
+    Mesge send(Mesge m) {
+        return m; // 메시지를 그대로 반환
+    }
+}
+
+
+============
+package Kakaotalk1;
+
+public class Mesge {
+    String text;
+
+    public Mesge(String text) {
+        this.text = text;
+    }
+
+	}
+
+
+
+
