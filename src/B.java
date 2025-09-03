@@ -59,19 +59,43 @@ public class Team {
 
 
 =========================================
-    
+
+package Kakaotalk1;
+public class Me {
+    String name; // 팀원의 이름
+    public Me(String name) {this.name = name;}
+        // 생성자: 이름을 받아 저장
+        // 내가 타이핑 하여 메세지를 입력.
+    public Message send(Message m) {return new Message(name + "에게 보내는 메시지 :  " + m.text);}
+        // 각 메시지 앞에 이름을 붙여서 반환
+        // 확인 버튼으로 메시지를 보내는 메서드
+}
 
 
 
 
 
+==============
+package Kakaotalk1;
+public class Message {
+String text; 
+// 메시지의 실제 텍스트를 저장하는 변수
+    public Message(String text) {this.text = text;}
+    // 생성자: 메시지를 만들 때 텍스트를 받아 저장
+}
 
+===============
+package kakao;
+public class kakao {
+	private Guest[] gArr;
+	private int idx; 
+	// private 은 해당 클레스만 할수있게.
+	kakao(int size){gArr=new Guest [size];}
+	void  addGuest (Guest g) {gArr[idx++] = g;}
+	void sendMessge(Message m) {
+		for (int i =0;  i<gArr.length;i++) {gArr[i].receiveMessage(m);}
+	}	
+}  
 
-
-
-
-
-
-  
 
 
